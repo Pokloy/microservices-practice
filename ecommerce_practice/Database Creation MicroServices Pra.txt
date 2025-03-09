@@ -1,0 +1,19 @@
+Database Creation: MicroServices Practice. 
+
+Platform: Posgress
+Server Group Name: MicroServices_Practice
+Service Name: MicroServices_Server
+Port: 5432 
+password: root
+
+
+
+Coding Review - #10748 review code (added comments)
+
+
+
+Setting of run configuration. 
+--server.port=[Port number]
+
+Example:
+--server.port=8082
