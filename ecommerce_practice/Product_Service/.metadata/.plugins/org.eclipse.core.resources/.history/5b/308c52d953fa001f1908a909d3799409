@@ -1,0 +1,11 @@
+package com.example.demo.model.service;
+
+import java.util.List;
+
+import com.example.demo.model.dao.entity.ProductEntity;
+
+public abstract class ProductService {
+    public List<ProductEntity> getAllProducts();
+    public ProductEntity addProduct(ProductEntity product);
+    public ProductEntity updateProduct(ProductEntity product);
+}

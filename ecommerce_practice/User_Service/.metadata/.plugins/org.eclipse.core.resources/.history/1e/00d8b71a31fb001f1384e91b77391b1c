@@ -1,0 +1,5 @@
+package com.example.demo.model.dao.entity;
+
+public class UserRepository {
+
+}

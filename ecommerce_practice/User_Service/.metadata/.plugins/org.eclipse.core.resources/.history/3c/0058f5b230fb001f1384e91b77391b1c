@@ -1,0 +1,7 @@
+spring.application.name=userServiceApplication
+server.port=8081
+
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.instance.hostname=userServiceApplication
+eureka.instance.leaseRenewalIntervalInSeconds=5
+eureka.instance.leaseExpirationDurationInSeconds=10

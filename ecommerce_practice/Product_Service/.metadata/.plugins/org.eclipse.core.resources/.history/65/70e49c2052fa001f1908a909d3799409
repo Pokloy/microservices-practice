@@ -1,0 +1,6 @@
+package com.example.demo.model.service;
+
+public abstract class ProductService {
+    public abstract List<Product> getAllProducts();
+    public abstract Product addProduct(Product product);
+}

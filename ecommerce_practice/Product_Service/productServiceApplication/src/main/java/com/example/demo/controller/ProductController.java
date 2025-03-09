@@ -1,0 +1,45 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.model.dao.entity.ProductEntity;
+import com.example.demo.model.service.ProductService;
+
+import java.util.*;
+
+@RestController
+@RequestMapping("/products")
+public class ProductController {
+	@Autowired
+	ProductService productService;
+	
+	public ProductController(ProductService productService) {
+		this.productService = productService;
+	}
+
+    @GetMapping
+    public List<ProductEntity> getAllProducts() {
+        return productService.getAllProducts();
+    }
+
+    @PostMapping
+    public ProductEntity addProduct(@RequestBody ProductEntity product) {
+        return productService.addProduct(product);
+    }
+    
+    @PutMapping
+    public ProductEntity updateProduct(@RequestBody ProductEntity product) {
+    	return productService.updateProduct(product);
+    }
+    
+    @DeleteMapping("/{idPk}")
+    public void deleteProduct(@PathVariable Long idPk) {
+    	productService.deleteProduct(idPk);
+    }
+    
+    @GetMapping("/{id}")
+    public ProductEntity getProductById(@PathVariable Long id) {
+        return productService.getProductById(id);
+    }
+}

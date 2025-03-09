@@ -1,0 +1,30 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.model.service.ProductService;
+
+import java.util.*;
+
+@RestController
+@RequestMapping("/products")
+public class ProductController {
+	@Autowired
+	ProductService productService;
+	
+	public ProductController(ProductService productService) {
+		this.productService = productService;
+	}
+
+    @GetMapping
+    public List<String> getAllProducts() {
+        return products;
+    }
+
+    @PostMapping("/{productName}")
+    public String addProduct(@PathVariable String productName) {
+        products.add(productName);
+        return productName + " added successfully!";
+    }
+}

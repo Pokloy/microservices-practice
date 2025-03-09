@@ -1,0 +1,10 @@
+package com.example.demo.model.service;
+
+import org.springframework.web.client.RestTemplate;
+
+import com.example.demo.model.dao.OrderRepository;
+import com.example.demo.model.dao.entity.OrderEntity;
+
+public abstract class OrderService {
+	public abstract OrderEntity placeOrder(OrderEntity order);
+}

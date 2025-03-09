@@ -1,0 +1,39 @@
+package com.example.demo.model.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.model.dao.ProductRepository;
+import com.example.demo.model.dao.entity.ProductEntity;
+import com.example.demo.model.service.ProductService;
+
+@Service
+public class ProductServiceImpl extends ProductService {
+    private final ProductRepository productRepository;
+
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
+    @Override
+    public List<ProductEntity> getAllProducts() {
+        return productRepository.findAll();
+    }
+
+    @Override
+    public ProductEntity addProduct(ProductEntity product) {
+        return productRepository.save(product);
+    }
+    
+    @Override
+    public ProductEntity updateProduct(ProductEntity product) {
+    	return productRepository.saveAndFlush(product);
+    }
+    
+    @Override
+    public void deleteProduct(Long idPk) {
+    	productRepository.deleteById(idPk);
+    }
+}
