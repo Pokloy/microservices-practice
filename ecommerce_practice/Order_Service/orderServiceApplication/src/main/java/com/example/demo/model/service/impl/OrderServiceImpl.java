@@ -2,6 +2,7 @@ package com.example.demo.model.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.controller.ProductClient;
@@ -12,6 +13,8 @@ import com.example.demo.model.dao.entity.ProductEntity;
 import com.example.demo.model.dto.ProductDTO;
 import com.example.demo.model.dto.UserResponse;
 import com.example.demo.model.service.OrderService;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
 @Service
 public class OrderServiceImpl extends OrderService {
@@ -43,5 +46,20 @@ public class OrderServiceImpl extends OrderService {
     
     public ProductEntity fetchProductDetails(Long productId) {
         return productClient.getProductById(productId);
+    }
+    
+    public OrderEntity fetchOrderDetails(Long productId) {
+    	return orderRepository.findById(productId).orElse(new OrderEntity());
+    }
+    
+    @Override
+    @CircuitBreaker(name = "userServiceBreaker", fallbackMethod = "fallbackGetUser")
+    public UserResponse getUser(Long userId) {
+        return userClient.getUserById(userId); // Call USER-SERVICE
+    }
+    
+    // Fallback Method (Executes when USER-SERVICE is down)
+    public UserResponse userFallback(Long userId, Throwable t) {
+        return new UserResponse(userId, "Fallback User", "fallback@example.com");
     }
 }

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.demo.model.dao.entity.ProductEntity;
 
-@FeignClient(name = "PRODUCT-SERVICE")
+@FeignClient(name = "PRODUCT-SERVICE", path = "/products")
 public interface ProductClient {
-	@GetMapping("/products/{id}")
-    ProductEntity getProductById(@PathVariable Long id);
+    @GetMapping("/{productId}")
+    ProductEntity getProductById(@PathVariable Long productId);
 }

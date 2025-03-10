@@ -46,4 +46,3 @@ public class UserController {
         return "User Service is running...";
     }
 }
-

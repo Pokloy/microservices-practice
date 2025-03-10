@@ -35,6 +35,12 @@
     </dependencyManagement>
 
     <dependencies>
+		
+		<!-- Open Feign -->
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
 
         <!-- Eureka Client -->
         <dependency>
