@@ -1,7 +1,0 @@
-package com.example.demo.model.service;
-
-import com.example.demo.model.dao.entity.OrderEntity;
-
-public abstract class OrderService {
-	public abstract OrderEntity placeOrder(OrderEntity order);
-}

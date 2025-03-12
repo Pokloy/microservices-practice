@@ -4,5 +4,5 @@ eclipse.preferences.version=1
 jssbranding_product_mainbundle=com.jaspersoft.studio
 jssbranding_product_name=Jaspersoft Studio plug-in
 jssbranding_product_version=6.19.0.final
-net.sf.jasperreports.JRPROPERTIES=com.jaspersoft.jasperreports.components.customvisualization.phantomjs.executable.path\=phantomjs\nnet.sf.jasperreports.web.resource.pattern.customvisualization.scripts\=com/jaspersoft/jasperreports/customvisualization/resources/require/.*\nnet.sf.jasperreports.compiler.temp.dir\=C\\\:\\\\WINDOWS\\\\System32\nnet.sf.jasperreports.chrome.enabled\=true\nnet.sf.jasperreports.compiler.classpath\=C\\\:\\\\Users\\\\manag\\\\eclipse\\\\jee-2023-12\\\\eclipse\\\\\\\\plugins/org.eclipse.equinox.launcher_1.6.600.v20231106-1826.jar\n
+net.sf.jasperreports.JRPROPERTIES=com.jaspersoft.jasperreports.components.customvisualization.phantomjs.executable.path\=phantomjs\nnet.sf.jasperreports.web.resource.pattern.customvisualization.scripts\=com/jaspersoft/jasperreports/customvisualization/resources/require/.*\nnet.sf.jasperreports.compiler.temp.dir\=C\\\:\\\\WINDOWS\\\\system32\nnet.sf.jasperreports.chrome.enabled\=true\nnet.sf.jasperreports.compiler.classpath\=C\\\:\\\\Users\\\\manag\\\\eclipse\\\\jee-2023-12\\\\eclipse\\\\\\\\plugins/org.eclipse.equinox.launcher_1.6.600.v20231106-1826.jar\n
 net.sf.jasperreports.chrome.enabled=true

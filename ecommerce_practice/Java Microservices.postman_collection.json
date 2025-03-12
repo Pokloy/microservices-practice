@@ -158,13 +158,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/products",
+					"raw": "http://localhost:8080/product-service/products",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"product-service",
 						"products"
 					]
 				}
@@ -177,13 +178,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/order",
+					"raw": "http://localhost:8080/order-service/order",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"order-service",
 						"order"
 					]
 				}
@@ -191,13 +193,13 @@
 			"response": []
 		},
 		{
-			"name": "Users-Post",
+			"name": "API-GATEWAY-ADD-USER",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"John Doe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"securepassword\"\r\n}\r\n",
+					"raw": "{\r\n    \"name\": \"Darlene Ariba\",\r\n    \"email\": \"darlene.ariba@example.com\",\r\n    \"password\": \"securepassword\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -205,14 +207,119 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/users",
+					"raw": "http://localhost:8080/user-service/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "8080",
 					"path": [
+						"user-service",
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-GATEWAY-ADD-ORDER",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"productId\": 2,\r\n    \"quantity\":71500,\r\n    \"totalPrice\":300622,\r\n    \"status\":\"PENDING\",\r\n    \"orderDate\": \"2025-03-07T12:00:00\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/order-service/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order-service",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-GATEWAY-GETUSER-BY-ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/user-service/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user-service",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-GATEWAY-GETPROD-BY-ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/product-service/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product-service",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-GATEWAY-GETORDER-BY-ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/order-service/order/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"order-service",
+						"order",
+						"6"
 					]
 				}
 			},

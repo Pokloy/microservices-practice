@@ -8,4 +8,9 @@
     <fullyQualifiedTypeName name="com.example.demo.model.service.ProductService"/>
     <fullyQualifiedTypeName name="com.example.demo.model.dao.entity.ProductEntity"/>
     <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="com.example.demo.model.dto.OrderResponse"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 </qualifiedTypeNameHistroy>
