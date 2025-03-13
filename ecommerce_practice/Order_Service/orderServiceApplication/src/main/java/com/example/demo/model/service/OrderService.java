@@ -8,6 +8,4 @@ public abstract class OrderService {
 	public abstract OrderEntity placeOrder(OrderEntity order);
 	public abstract ProductEntity fetchProductDetails(Long productId);
 	public abstract OrderEntity fetchOrderDetails(Long productId);
-	public abstract UserResponse getUser(Long userId);
-	public abstract UserResponse userFallback(Long userId, Throwable t);
 }

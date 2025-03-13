@@ -10,15 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.dao.entity.OrderEntity;
+import com.example.demo.model.dto.UserResponse;
 import com.example.demo.model.service.OrderService;
 
 @RestController
-@RequestMapping("/order")
 public class OrderController {
 	@Autowired
     private OrderService orderService;
+	
+	@Autowired
+	private UserClient userClient;
     
-    @GetMapping("/status")
+    @GetMapping("/order/status")
     public String getStatus() {
         return "Order Service is running...";
     }
@@ -28,14 +31,19 @@ public class OrderController {
         return "Order Service Test 1...";
     }
     
-    @PostMapping
+    @PostMapping("/orders")
     public ResponseEntity<OrderEntity> placeOrder(@RequestBody OrderEntity order) {
         OrderEntity savedOrder = orderService.placeOrder(order);
         return ResponseEntity.ok(savedOrder);
     }
     
-    @GetMapping("/{id}")
+    @GetMapping("/order/{id}")
     public OrderEntity getOrderById(@PathVariable Long id) {
     	return orderService.fetchOrderDetails(id);
+    }
+    
+    @GetMapping("/users/{id}")
+    public UserResponse getUserById(@PathVariable Long id) {
+        return userClient.getUserById(id);
     }
 }

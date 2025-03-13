@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="com.example.demo.model.dao.OrderRepository"/>
     <fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
     <fullyQualifiedTypeName name="com.example.demo.model.dto.ProductDTO"/>
@@ -35,4 +34,5 @@
     <fullyQualifiedTypeName name="com.example.demo.controller.UserClient"/>
     <fullyQualifiedTypeName name="com.example.demo.model.dto.UserResponse"/>
     <fullyQualifiedTypeName name="com.example.demo.controller.fallback.UserClientFallback"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 </qualifiedTypeNameHistroy>

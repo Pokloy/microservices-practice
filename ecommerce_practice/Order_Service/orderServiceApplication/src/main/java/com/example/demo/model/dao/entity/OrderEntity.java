@@ -31,7 +31,7 @@ public class OrderEntity {
     @Column(name = "order_date", nullable = false)
     private LocalDateTime orderDate; // Timestamp of when the order was placed
     
-    @Column(name = "customer_name", nullable = false)
-    private String customerName; // Store customer name
+    @Transient
+    private String customerName;
 
 }

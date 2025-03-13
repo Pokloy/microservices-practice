@@ -9,11 +9,10 @@ import com.example.demo.model.dto.UserResponse;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 
-@FeignClient(name = "USER-SERVICE", path = "/users", fallback = UserClientFallback.class)
+@FeignClient(name = "user-service", fallback = UserClientFallback.class)
 public interface UserClient {
-    @GetMapping("/{userId}")
-    @CircuitBreaker(name = "userServiceBreaker", fallbackMethod = "fallbackGetUserById")
-    UserResponse getUserById(@PathVariable("userId") Long userId);
+    @GetMapping("/users/{id}")
+    UserResponse getUserById(@PathVariable Long id);
     
     default UserResponse fallbackGetUserById(Long userId, Throwable throwable) {
         return new UserResponse(userId, "Fallback User", "fallback@example.com");

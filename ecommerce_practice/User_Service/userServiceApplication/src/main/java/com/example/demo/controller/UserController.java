@@ -28,6 +28,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public UserEntity getUserById(@PathVariable Long id) {
+    	System.out.println(id);
         return userService.getUserById(id);
     }
 

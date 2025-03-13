@@ -158,7 +158,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/product-service/products",
+					"raw": "http://localhost:8080/product-service/products/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -166,7 +166,8 @@
 					"port": "8080",
 					"path": [
 						"product-service",
-						"products"
+						"products",
+						"2"
 					]
 				}
 			},
@@ -178,7 +179,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/order-service/order",
+					"raw": "http://localhost:8080/order-service/order/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -186,7 +187,8 @@
 					"port": "8080",
 					"path": [
 						"order-service",
-						"order"
+						"order",
+						"1"
 					]
 				}
 			},
@@ -199,7 +201,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Darlene Ariba\",\r\n    \"email\": \"darlene.ariba@example.com\",\r\n    \"password\": \"securepassword\"\r\n}\r\n",
+					"raw": "{\r\n    \"name\": \"Test Five\",\r\n    \"email\": \"Test.Five@example.com\",\r\n    \"password\": \"securepassword5\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -231,7 +233,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\": 1,\r\n    \"productId\": 2,\r\n    \"quantity\":71500,\r\n    \"totalPrice\":300622,\r\n    \"status\":\"PENDING\",\r\n    \"orderDate\": \"2025-03-07T12:00:00\"\r\n}\r\n\r\n",
+					"raw": "{\r\n    \"userId\": 6,\r\n    \"productId\": 1,\r\n    \"quantity\":500,\r\n    \"totalPrice\":22,\r\n    \"status\":\"PENDING\",\r\n    \"orderDate\": \"2025-03-07T12:00:00\"\r\n}\r\n\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -262,7 +264,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/user-service/users/1",
+					"raw": "http://localhost:8080/user-service/users/8",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -271,7 +273,7 @@
 					"path": [
 						"user-service",
 						"users",
-						"1"
+						"8"
 					]
 				}
 			},
