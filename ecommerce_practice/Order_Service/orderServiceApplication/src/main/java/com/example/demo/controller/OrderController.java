@@ -7,21 +7,27 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.dao.entity.OrderEntity;
 import com.example.demo.model.dto.UserResponse;
+import com.example.demo.model.service.OrderEventPublisher;
 import com.example.demo.model.service.OrderService;
 
 @RestController
+@RequestMapping("/order")
 public class OrderController {
 	@Autowired
     private OrderService orderService;
 	
 	@Autowired
 	private UserClient userClient;
+	
+    @Autowired
+    private OrderEventPublisher eventPublisher;
     
-    @GetMapping("/order/status")
+    @GetMapping("/status")
     public String getStatus() {
         return "Order Service is running...";
     }
@@ -31,13 +37,13 @@ public class OrderController {
         return "Order Service Test 1...";
     }
     
-    @PostMapping("/orders")
+    @PostMapping
     public ResponseEntity<OrderEntity> placeOrder(@RequestBody OrderEntity order) {
         OrderEntity savedOrder = orderService.placeOrder(order);
         return ResponseEntity.ok(savedOrder);
     }
     
-    @GetMapping("/order/{id}")
+    @GetMapping("/{id}")
     public OrderEntity getOrderById(@PathVariable Long id) {
     	return orderService.fetchOrderDetails(id);
     }
@@ -45,5 +51,11 @@ public class OrderController {
     @GetMapping("/users/{id}")
     public UserResponse getUserById(@PathVariable Long id) {
         return userClient.getUserById(id);
+    }
+    
+    @PostMapping("/place")
+    public String placeOrder(@RequestParam String orderDetails) {
+        eventPublisher.sendOrderEvent(orderDetails);
+        return "Order placed: " + orderDetails;
     }
 }
