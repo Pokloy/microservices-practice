@@ -37,11 +37,12 @@ public class OrderServiceImpl extends OrderService {
         return productClient.getProductById(productId);
     }
 
-    public OrderEntity fetchOrderDetails(Long orderId) {
+    @CircuitBreaker(name = "userService", fallbackMethod = "fallbackGetUserById")
+    public OrderEntity fetchOrderDetails(String token, Long orderId) {
         OrderEntity order = orderRepository.findById(orderId).orElse(new OrderEntity());
 
         // Fetch user details to set customer name
-        UserResponse user = userClient.getUserById(order.getUserId());
+        UserResponse user = userClient.getUserById(token, order.getUserId());
         order.setCustomerName(user.getName()); 
 
         return order;

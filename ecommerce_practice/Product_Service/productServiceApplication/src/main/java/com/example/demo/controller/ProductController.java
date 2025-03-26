@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.model.dao.entity.ProductEntity;
+import com.example.demo.model.dto.OrderResponse;
 import com.example.demo.model.service.ProductService;
 
 import java.util.*;
@@ -13,6 +14,9 @@ import java.util.*;
 public class ProductController {
 	@Autowired
 	ProductService productService;
+	
+	@Autowired
+	OrderClient orderClient;
 	
 	public ProductController(ProductService productService) {
 		this.productService = productService;
@@ -41,5 +45,10 @@ public class ProductController {
     @GetMapping("/{id}")
     public ProductEntity getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
+    }
+    
+    @GetMapping("/order/{id}")
+    public OrderResponse getOrderById(@RequestHeader("Authorization") String token, @PathVariable Long id) {
+    	return orderClient.getOrderById(token, id);
     }
 }

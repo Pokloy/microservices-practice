@@ -7,5 +7,5 @@ import com.example.demo.model.dto.UserResponse;
 public abstract class OrderService {
 	public abstract OrderEntity placeOrder(OrderEntity order);
 	public abstract ProductEntity fetchProductDetails(Long productId);
-	public abstract OrderEntity fetchOrderDetails(Long productId);
+	public abstract OrderEntity fetchOrderDetails(String token,Long productId);
 }

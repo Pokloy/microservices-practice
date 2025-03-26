@@ -30,6 +30,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\manag\git\microservices-practice\microservices-practice\ecommerce_practice\Order_Service"/>
 			<item value="C:\Users\manag\git\microservices-practice\ecommerce_practice\Order_Service"/>
 		</list>
 		<list key="projectNameTemplate">

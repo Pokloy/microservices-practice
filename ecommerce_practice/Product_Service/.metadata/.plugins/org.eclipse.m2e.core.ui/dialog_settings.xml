@@ -70,6 +70,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\manag\git\microservices-practice\microservices-practice\ecommerce_practice\Product_Service"/>
 			<item value="C:\Users\tetsu\OneDrive\Desktop\Web Dev Learnings\Self-Learning-MicroService-Java\microservices-practice\ecommerce_practice\Product_Service"/>
 		</list>
 		<list key="projectNameTemplate">

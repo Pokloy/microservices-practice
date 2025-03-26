@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,23 +38,23 @@ public class OrderController {
         return "Order Service Test 1...";
     }
     
-    @PostMapping
+    @PostMapping("/place")
     public ResponseEntity<OrderEntity> placeOrder(@RequestBody OrderEntity order) {
         OrderEntity savedOrder = orderService.placeOrder(order);
         return ResponseEntity.ok(savedOrder);
     }
     
     @GetMapping("/{id}")
-    public OrderEntity getOrderById(@PathVariable Long id) {
-    	return orderService.fetchOrderDetails(id);
+    public OrderEntity getOrderById(@RequestHeader("Authorization") String token, @PathVariable Long id) {
+    	return orderService.fetchOrderDetails(token,id);
     }
     
     @GetMapping("/users/{id}")
-    public UserResponse getUserById(@PathVariable Long id) {
-        return userClient.getUserById(id);
+    public UserResponse getUserById(@RequestHeader("Authorization") String token, @PathVariable Long id) {
+        return userClient.getUserById(token,id);
     }
     
-    @PostMapping("/place")
+    @PostMapping("/test")
     public String placeOrder(@RequestParam String orderDetails) {
         eventPublisher.sendOrderEvent(orderDetails);
         return "Order placed: " + orderDetails;

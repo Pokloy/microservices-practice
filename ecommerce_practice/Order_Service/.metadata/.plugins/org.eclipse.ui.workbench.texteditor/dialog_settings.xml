@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="amqp"/>
+		<item key="selection" value="spring-boot-starter-amqp"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="spring-boot-starter-amqp"/>
 			<item value="amqp"/>
 			<item value="userService"/>
 			<item value="userServiceBreaker"/>
@@ -22,7 +23,6 @@
 			<item value="failureRateThreshold"/>
 			<item value="slidingWindowSize"/>
 			<item value="waitDurationInOpenState"/>
-			<item value="spring-boot-starter-aop"/>
 		</list>
 		<list key="replacehistory">
 		</list>
