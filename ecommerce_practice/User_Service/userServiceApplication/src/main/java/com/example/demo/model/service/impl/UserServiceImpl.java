@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.dao.UserRepository;
 import com.example.demo.model.dao.entity.UserEntity;
+import com.example.demo.model.dto.PaymentSuccessEvent;
 import com.example.demo.model.service.UserService;
 
 @Service
@@ -32,5 +33,16 @@ public class UserServiceImpl extends UserService {
     @Override
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
+    }
+    
+    public void finalizeOrder(PaymentSuccessEvent event) {
+        System.out.println("Finalizing order: " + event.getOrderId());
+
+        // Mock logic to finalize order
+        if ("SUCCESS".equals(event.getStatus())) {
+            System.out.println("Order " + event.getOrderId() + " is finalized with payment amount: $" + event.getAmount());
+        } else {
+            System.out.println("Order " + event.getOrderId() + " could not be finalized due to payment failure.");
+        }
     }
 }

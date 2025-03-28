@@ -7,7 +7,7 @@ import com.example.demo.model.service.OrderEventListener;
 
 @Service
 public class OrderEventListenerImpl extends OrderEventListener {
-    @RabbitListener(queues = "orderQueue")
+    @RabbitListener(queues = "order.queue")
     public void receiveOrderMessage(String orderMessage) {
         System.out.println("Received Order Event in User Service: " + orderMessage);
     }

@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.dao.entity.OrderEntity;
+import com.example.demo.model.dto.OrderCreatedEvent;
 import com.example.demo.model.dto.UserResponse;
 import com.example.demo.model.service.OrderEventPublisher;
 import com.example.demo.model.service.OrderService;
@@ -27,6 +29,9 @@ public class OrderController {
 	
     @Autowired
     private OrderEventPublisher eventPublisher;
+    
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
     
     @GetMapping("/status")
     public String getStatus() {
@@ -58,5 +63,12 @@ public class OrderController {
     public String placeOrder(@RequestParam String orderDetails) {
         eventPublisher.sendOrderEvent(orderDetails);
         return "Order placed: " + orderDetails;
+    }
+    
+    @PostMapping("/createOrder")
+    public String createOrder(@RequestBody OrderCreatedEvent orderCreatedEvent) {
+        // Send the order event to RabbitMQ
+        rabbitTemplate.convertAndSend("order.exchange", "order.created", orderCreatedEvent);
+        return "Order created successfully!ssss";
     }
 }
