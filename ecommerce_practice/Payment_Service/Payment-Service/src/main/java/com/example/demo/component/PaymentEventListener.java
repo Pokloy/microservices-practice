@@ -11,15 +11,18 @@ import com.example.demo.model.service.PaymentService;
 public class PaymentEventListener {
 
     @Autowired
-    PaymentService paymentService;
-
-    // Listens to "order.queue" and processes incoming order events
+    private PaymentService paymentService;
+    
+    @RabbitListener(queues = "payment.queue")
+    public void passOrderToUser(OrderCreatedEvent event) {
+        System.out.println("Sending to User Service order Id: " + event);
+        paymentService.processPayment(event);
+    }
+    
     @RabbitListener(queues = "order.queue")
-    public void handleOrderCreatedEvent(OrderCreatedEvent event) {
-        System.out.println("Received order event: " + event);
-
-        // Processes the order event to handle payment
-        paymentService.processPayment1(event);
+    public void handleOrderCreated(OrderCreatedEvent event) {
+        System.out.println("Payment Service Received: " + event);
+        passOrderToUser(event);
     }
 }
 

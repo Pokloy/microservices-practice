@@ -13,11 +13,13 @@ public class PaymentEventListener {
     @Autowired
     private UserService userService;
 
+    
     @RabbitListener(queues = "payment.queue")
     public void handlePaymentSuccessEvent(PaymentSuccessEvent event) {
-        System.out.println("Received payment success event: " + event);
+        System.out.println("Received payment success event: " + event.getOrderId());
         
         // Process order finalization in UserService
         userService.finalizeOrder(event);
     }
+    
 }

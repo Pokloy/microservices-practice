@@ -8,4 +8,5 @@ public abstract class OrderService {
 	public abstract OrderEntity placeOrder(OrderEntity order);
 	public abstract ProductEntity fetchProductDetails(Long productId);
 	public abstract OrderEntity fetchOrderDetails(String token,Long productId);
+	public abstract void finalizeOrder(Long orderId);
 }

@@ -35,6 +35,7 @@ public class UserServiceImpl extends UserService {
         userRepository.deleteById(id);
     }
     
+    @Override
     public void finalizeOrder(PaymentSuccessEvent event) {
         System.out.println("Finalizing order: " + event.getOrderId());
 

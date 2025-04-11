@@ -47,4 +47,13 @@ public class OrderServiceImpl extends OrderService {
 
         return order;
     }
+    
+    public void finalizeOrder(Long orderId) {
+    	OrderEntity order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found with ID: " + orderId));
+        
+        order.setStatus("COMPLETED");
+        orderRepository.save(order);
+        System.out.println("Order finalized and marked as COMPLETED.");
+    }
 }

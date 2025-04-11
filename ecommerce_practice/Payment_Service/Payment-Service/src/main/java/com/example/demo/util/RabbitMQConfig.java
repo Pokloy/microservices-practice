@@ -28,7 +28,24 @@ public class RabbitMQConfig {
         return BindingBuilder.bind(paymentQueue).to(paymentExchange).with("payment.success");
     }
     
+    @Bean
+    public Queue orderQueue() {
+        return new Queue("order.queue");
+    }
 
+    @Bean
+    public DirectExchange orderExchange() {
+        return new DirectExchange("order.exchange");
+    }
+
+    @Bean
+    public Binding orderBinding(Queue orderQueue, DirectExchange orderExchange) {
+        return BindingBuilder
+                .bind(orderQueue)
+                .to(orderExchange)
+                .with("order.created");
+    }
+    
     // Converts JSON messages to Java objects automatically
     @Bean
     public Jackson2JsonMessageConverter messageConverter() {

@@ -8,6 +8,12 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="spring-security-crypto"/>
+			<item value="jjwt-api"/>
+			<item value="spring-boot-starter-oauth2-resource-server"/>
+			<item value="spring-boot-starter-security"/>
+			<item value="OrderResponse"/>
+			<item value="getOrderById"/>
 			<item value="spring-cloud-starter-openfeign"/>
 			<item value="org.springframework.cloud"/>
 		</list>

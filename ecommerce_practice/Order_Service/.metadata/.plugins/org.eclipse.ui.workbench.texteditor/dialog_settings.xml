@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="spring-boot-starter-amqp"/>
+		<item key="selection" value="OrderCreatedEvent"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="OrderCreatedEvent"/>
+			<item value="finalizeOrder"/>
+			<item value="off"/>
+			<item value="loging"/>
+			<item value="getOrderById"/>
+			<item value="fetchOrderDetails"/>
+			<item value="getUserById"/>
+			<item value="spring-cloud-starter-openfeign"/>
+			<item value="spring-boot-starter-oauth2-resource-server"/>
+			<item value="spring-boot-starter-security"/>
+			<item value="jwt"/>
 			<item value="spring-boot-starter-amqp"/>
 			<item value="amqp"/>
 			<item value="userService"/>
 			<item value="userServiceBreaker"/>
-			<item value="spring.cloud.loadbalancer.ribbon.enabled=false"/>
-			<item value="loadbalancer"/>
-			<item value="USER-SERVICE"/>
-			<item value="circuitbreaker"/>
-			<item value="spring.cloud.discovery.enabled=false"/>
-			<item value="spring-cloud-starter-loadbalancer"/>
-			<item value="fetchOrderDetails"/>
-			<item value="userFallback"/>
-			<item value="failureRateThreshold"/>
-			<item value="slidingWindowSize"/>
-			<item value="waitDurationInOpenState"/>
 		</list>
 		<list key="replacehistory">
 		</list>

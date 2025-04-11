@@ -65,9 +65,14 @@ public class OrderController {
         return "Order placed: " + orderDetails;
     }
     
-    @PostMapping("/createOrder")
+    @PostMapping("/create-order")
     public String createOrder(@RequestBody OrderCreatedEvent orderCreatedEvent) {
         // Send the order event to RabbitMQ
+    	System.out.println("Order Service Takes effect on URL '/create-order' ");
+    	orderCreatedEvent.setUserId("3");
+    	orderCreatedEvent.setOrderId("8");
+    	orderCreatedEvent.setStatus("SUCCESS");
+    	orderCreatedEvent.setAmount(588.00);
         rabbitTemplate.convertAndSend("order.exchange", "order.created", orderCreatedEvent);
         return "Order created successfully!ssss";
     }

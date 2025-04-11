@@ -1,0 +1,7 @@
+The application properties has 3 part.
+
+
+The application.properties is the main. 
+The application-office.properties is additional configuration for office laptop. 
+The application-personal.properties is additional configuration for personal laptop. 
+To change configuration please refer to the "appPropertiesConfiguration"

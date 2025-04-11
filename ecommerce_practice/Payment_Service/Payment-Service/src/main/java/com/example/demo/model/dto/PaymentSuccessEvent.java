@@ -8,8 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PaymentSuccessEvent {
-    private String orderId;
-    private String userId;
-    private double amount;
-    private String status;
+	private String orderId;
 }

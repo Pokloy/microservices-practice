@@ -9,7 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PaymentSuccessEvent {
     private String orderId;
+
     private String userId;
-    private double amount;
+
+    private Double amount;
+
     private String status;
 }
