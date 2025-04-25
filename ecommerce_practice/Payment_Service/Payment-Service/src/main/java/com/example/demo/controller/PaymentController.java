@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.example.demo.event.OrderCreatedEvent;
 import com.example.demo.model.dto.PaymentSuccessEvent;
+import com.example.demo.model.service.PaymentService;
 
 
 @RestController
@@ -18,6 +20,9 @@ public class PaymentController {
 	
     @Autowired
     private RabbitTemplate rabbitTemplate;
+    
+    @Autowired
+    private PaymentService paymentService;
 
     @PostMapping("/process-payment")
     public String processPayment(@RequestBody PaymentSuccessEvent request) {
@@ -36,6 +41,11 @@ public class PaymentController {
         return "testing payment service";
     }
     
-    
+    @PostMapping("/processing-payment-2")
+    public String processPayment2(@RequestBody OrderCreatedEvent event) {
+
+    	paymentService.processPayment2(event);
+    	return "Payment Process Version 2 processed";
+    }
 
 }

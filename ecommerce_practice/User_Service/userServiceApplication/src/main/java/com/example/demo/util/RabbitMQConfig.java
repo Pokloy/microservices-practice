@@ -41,4 +41,33 @@ public class RabbitMQConfig {
                 .to(orderExchange())
                 .with("payment.success.routing.key");
     }
+    
+    
+//    @Bean
+//    public Queue paymentSuccessQueue() {
+//        return QueueBuilder.durable("paymentSuccessQueue")
+//            .withArgument("x-dead-letter-exchange", "dlx.exchange")
+//            .withArgument("x-dead-letter-routing-key", "dlx.routing.key")
+//            .build();
+//    }
+//
+//    
+//    @Bean
+//    public DirectExchange deadLetterExchange() {
+//        return new DirectExchange("dlx.exchange");
+//    }
+//
+//    @Bean
+//    public Queue deadLetterQueue() {
+//        return new Queue("dlx.queue");
+//    }
+//
+//    @Bean
+//    public Binding dlqBinding() {
+//        return BindingBuilder
+//            .bind(deadLetterQueue())
+//            .to(deadLetterExchange())
+//            .with("dlx.routing.key");
+//    }
+
 }

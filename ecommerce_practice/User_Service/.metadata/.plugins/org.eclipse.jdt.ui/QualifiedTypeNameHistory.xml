@@ -42,4 +42,5 @@
     <fullyQualifiedTypeName name="com.example.demo.model.dao.entity.OrderEntity"/>
     <fullyQualifiedTypeName name="com.example.demo.model.dao.OrderRepository"/>
     <fullyQualifiedTypeName name="com.example.demo.model.service.OrderService"/>
+    <fullyQualifiedTypeName name="org.springframework.amqp.core.QueueBuilder"/>
 </qualifiedTypeNameHistroy>

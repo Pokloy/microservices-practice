@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="OrderCreatedEvent"/>
+		<item key="selection" value="Lombok"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="lombok"/>
+			<item value="create-order"/>
 			<item value="OrderCreatedEvent"/>
 			<item value="finalizeOrder"/>
 			<item value="off"/>
@@ -21,8 +23,6 @@
 			<item value="jwt"/>
 			<item value="spring-boot-starter-amqp"/>
 			<item value="amqp"/>
-			<item value="userService"/>
-			<item value="userServiceBreaker"/>
 		</list>
 		<list key="replacehistory">
 		</list>
