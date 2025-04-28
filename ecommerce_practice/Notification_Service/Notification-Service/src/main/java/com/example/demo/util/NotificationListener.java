@@ -8,7 +8,7 @@ import com.example.demo.event.PaymentSuccessEvent;
 @Component
 public class NotificationListener {
 
-    @RabbitListener(queues = "paymentSuccessQueue")
+    @RabbitListener(queues = "payment.queue")
     public void handlePaymentSuccess(PaymentSuccessEvent event) {
         System.out.println("📧 Sending notification to user: " + event.getUserId());
         System.out.println("✅ Order ID: " + event.getOrderId() + " paid successfully.");

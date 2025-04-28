@@ -25,21 +25,21 @@ public class RabbitMQConfig {
     }
     
     @Bean
-    public DirectExchange orderExchange() {
-        return new DirectExchange("order.exchange");
+    public DirectExchange paymentExchange() {
+        return new DirectExchange("payment.exchange");
     }
     
     @Bean
     public Queue paymentSuccessQueue() {
-        return new Queue("paymentSuccessQueue", true);
+        return new Queue("payment.queue", true);
     }
     
     @Bean
     public Binding paymentSuccessBinding() {
         return BindingBuilder
                 .bind(paymentSuccessQueue())
-                .to(orderExchange())
-                .with("payment.success.routing.key");
+                .to(paymentExchange())
+                .with("payment.success");
     }
     
     

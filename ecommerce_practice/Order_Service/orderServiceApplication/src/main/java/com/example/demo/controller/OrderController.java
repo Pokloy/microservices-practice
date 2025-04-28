@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.dao.OrderRepository;
 import com.example.demo.model.dao.entity.OrderEntity;
 import com.example.demo.model.dto.OrderCreatedEvent;
+import com.example.demo.model.dto.PaymentSuccessEvent;
 import com.example.demo.model.dto.UserResponse;
 import com.example.demo.model.service.OrderEventPublisher;
 import com.example.demo.model.service.OrderService;
@@ -72,23 +73,19 @@ public class OrderController {
     }
     
     @PostMapping("/create-order")
-    public String createOrder(@RequestBody OrderCreatedEvent orderCreatedEvent) {
+    public String createOrder(@RequestBody PaymentSuccessEvent event) {
         // Send the order event to RabbitMQ
     	System.out.println("Order Service Takes effect on URL '/create-order' ");
     	LocalDateTime now = LocalDateTime.now();
     	OrderEntity orderE = new OrderEntity();
-    	orderCreatedEvent.setUserId("3");
-    	orderCreatedEvent.setOrderId("8");
-    	orderCreatedEvent.setStatus("SUCCESS");
-    	orderCreatedEvent.setAmount(588.00);
-    	orderE.setUserId(Long.parseLong("3"));
+    	orderE.setUserId(Long.parseLong(event.getUserId()));
     	orderE.setOrderDate(now);
     	orderE.setProductId((long)9);
     	orderE.setQuantity(1);
-    	orderE.setStatus(orderCreatedEvent.getStatus());
-    	orderE.setTotalPrice(orderCreatedEvent.getAmount());
+    	orderE.setStatus(event.getStatus());
+    	orderE.setTotalPrice(event.getAmount());
     	orderRepository.save(orderE);
-    	rabbitTemplate.convertAndSend("order.exchange", "order.created", orderCreatedEvent);
+    	rabbitTemplate.convertAndSend("payment.exchange", "payment.success", event);
         return "Order created successfully!ssss";
     }
 }

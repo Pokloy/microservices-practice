@@ -14,34 +14,34 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
- @Bean
- public Jackson2JsonMessageConverter messageConverter() {
-     return new Jackson2JsonMessageConverter();
- }
+    @Bean
+    public Jackson2JsonMessageConverter messageConverter() {
+        return new Jackson2JsonMessageConverter();
+    }
 
- @Bean
- public RabbitTemplate rabbitTemplate(ConnectionFactory factory) {
-     RabbitTemplate template = new RabbitTemplate(factory);
-     template.setMessageConverter(messageConverter());
-     return template;
- }
-
- @Bean
- public Queue paymentSuccessQueue() {
-     return new Queue("paymentSuccessQueue", true);
- }
-
- @Bean
- public DirectExchange orderExchange() {
-     return new DirectExchange("order.exchange");
- }
-
- @Bean
- public Binding paymentSuccessBinding() {
-     return BindingBuilder
-             .bind(paymentSuccessQueue())
-             .to(orderExchange())
-             .with("payment.success.routing.key");
- }
+    @Bean
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
+        RabbitTemplate template = new RabbitTemplate(connectionFactory);
+        template.setMessageConverter(messageConverter());
+        return template;
+    }
+    
+    @Bean
+    public DirectExchange orderExchange() {
+        return new DirectExchange("payment.exchange");
+    }
+    
+    @Bean
+    public Queue paymentSuccessQueue() {
+        return new Queue("payment.queue", true);
+    }
+    
+    @Bean
+    public Binding paymentSuccessBinding() {
+        return BindingBuilder
+                .bind(paymentSuccessQueue())
+                .to(orderExchange())
+                .with("payment.success");
+    }
 }
 

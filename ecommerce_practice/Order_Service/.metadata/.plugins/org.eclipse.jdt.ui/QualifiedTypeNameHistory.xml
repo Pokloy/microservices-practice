@@ -46,4 +46,5 @@
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
     <fullyQualifiedTypeName name="com.example.demo.model.dao.OrderRepository"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="com.example.demo.model.dto.PaymentSuccessEvent"/>
 </qualifiedTypeNameHistroy>
