@@ -18,12 +18,7 @@ public class PaymentEventListener {
         System.out.println("Sending to User Service order Id: " + event);
         paymentService.processPayment(event);
     }
-    
-    @RabbitListener(queues = "order.queue")
-    public void handleOrderCreated(OrderCreatedEvent event) {
-        System.out.println("Payment Service Received: " + event);
-        passOrderToUser(event);
-    }
+
 }
 
 

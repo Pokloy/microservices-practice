@@ -84,7 +84,6 @@
           <tags>persp.perspSC:org.eclipse.jpt.ui.jpaPerspective</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_SmmCdf_vEe-TVfinwPkGvg" selectedElement="_SmmCgv_vEe-TVfinwPkGvg" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_SmmCdv_vEe-TVfinwPkGvg" elementId="topLeft" containerData="1977" selectedElement="_SmmCd__vEe-TVfinwPkGvg">
-              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_SmmCd__vEe-TVfinwPkGvg" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_Smmqk__vEe-TVfinwPkGvg" closeable="true">
                 <tags>View</tags>
                 <tags>categoryTag:General</tags>
@@ -444,6 +443,7 @@
       <children xsi:type="basic:PartStack" xmi:id="_Smmqif_vEe-TVfinwPkGvg" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_Otl3IAngEfCarIlglDOdNg">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
+        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_h8GLEAkqEfCmkdHsCS3wrQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="eureka-server/pom.xml" iconURI="platform:/plugin/org.eclipse.m2e.editor/icons/editor-pom.gif" closeable="true">
           <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.m2e.editor.MavenPomEditor&quot; name=&quot;pom.xml&quot; partName=&quot;eureka-server/pom.xml&quot; title=&quot;eureka-server/pom.xml&quot; tooltip=&quot;eureka-server/pom.xml&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/eureka-server/pom.xml&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
@@ -451,10 +451,12 @@
           <tags>org.eclipse.m2e.editor.MavenPomEditor</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_Otl3IAngEfCarIlglDOdNg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="application.properties" iconURI="platform:/plugin/org.springframework.tooling.boot.ls/icons/spring_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;SpringBootPropertyEditor&quot; name=&quot;application.properties&quot; partName=&quot;application.properties&quot; title=&quot;application.properties&quot; tooltip=&quot;eureka-server/src/main/resources/application.properties&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/eureka-server/src/main/resources/application.properties&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;244&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;SpringBootPropertyEditor&quot; name=&quot;application.properties&quot; partName=&quot;application.properties&quot; title=&quot;application.properties&quot; tooltip=&quot;eureka-server/src/main/resources/application.properties&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/eureka-server/src/main/resources/application.properties&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;128&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>SpringBootPropertyEditor</tags>
+          <tags>active</tags>
+          <tags>activeOnClose</tags>
         </children>
       </children>
     </sharedElements>
@@ -464,8 +466,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1741168038639&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_SmmqlP_vEe-TVfinwPkGvg" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -728,7 +728,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_SmmrRP_vEe-TVfinwPkGvg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_f09H8CPPEfChgpG_NcgjAA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_SmsxFv_vEe-TVfinwPkGvg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FVqCECWlEfCmIquaBEfSWw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_SmsxFv_vEe-TVfinwPkGvg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_SmmrUf_vEe-TVfinwPkGvg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -736,8 +736,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_SmmrU__vEe-TVfinwPkGvg" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_f1AyUCPPEfChgpG_NcgjAA" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_SmrkIf_vEe-TVfinwPkGvg"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_f1BZYCPPEfChgpG_NcgjAA" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_SmsJRP_vEe-TVfinwPkGvg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FVxW0CWlEfCmIquaBEfSWw" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_SmrkIf_vEe-TVfinwPkGvg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FVyk8CWlEfCmIquaBEfSWw" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_SmsJRP_vEe-TVfinwPkGvg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_SmmrV__vEe-TVfinwPkGvg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -770,7 +770,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_SmnQ7P_vEe-TVfinwPkGvg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_f1DOkCPPEfChgpG_NcgjAA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_Smsws__vEe-TVfinwPkGvg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_FV0aICWlEfCmIquaBEfSWw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Smsws__vEe-TVfinwPkGvg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_SmnQ9__vEe-TVfinwPkGvg" elementId="com.essiembre.eclipse.rbe.ui.editor.ResourceBundleEditor" visible="false">
         <tags>Draggable</tags>
